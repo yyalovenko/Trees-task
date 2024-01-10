@@ -36,32 +36,27 @@ public class AppServices {
     }
 
     public static Node buildTree() {
-        Node root = new Node(1);
-        Node ten = new Node (10);
-        Node twenty = new Node (20);
-        Node thirtyOne = new Node(31);
-        Node twentyTwo = new Node (22);
-        Node three = new Node(3);
-        Node seven = new Node (7);
-        Node twentyFive = new Node (25);
-        Node eleven = new Node (11);
-        Node fourtyFive = new Node (45);
-        Node six = new Node (6);
-        Node five = new Node(5);
 
-        root.setLeftChild(ten);
-        root.setRightChild(twentyFive);
-        ten.setLeftChild(twenty);
-        ten.setRightChild(three);
-        twenty.setLeftChild(thirtyOne);
-        twenty.setRightChild(twentyTwo);
-        three.setRightChild(seven);
-        twentyFive.setLeftChild(eleven);
-        twentyFive.setRightChild(fourtyFive);
-        fourtyFive.setLeftChild(six);
-        fourtyFive.setRightChild(five);
+        int[] valuesArr = {1,10,20,31,22,3,7,25,11,45,6,5};
+        Node[] nodesArr = new Node[12];
 
-        return root;
+        for(int i = 0; i < valuesArr.length; i++) {
+            nodesArr[i] = new Node(valuesArr[i]);
+        }
+
+        nodesArr[0].setLeftChild(nodesArr[1]);
+        nodesArr[0].setRightChild(nodesArr[7]);
+        nodesArr[1].setLeftChild(nodesArr[2]);
+        nodesArr[1].setRightChild(nodesArr[5]);
+        nodesArr[2].setLeftChild(nodesArr[3]);
+        nodesArr[2].setRightChild(nodesArr[4]);
+        nodesArr[5].setRightChild(nodesArr[6]);
+        nodesArr[7].setLeftChild(nodesArr[8]);
+        nodesArr[7].setRightChild(nodesArr[9]);
+        nodesArr[9].setLeftChild(nodesArr[10]);
+        nodesArr[9].setRightChild(nodesArr[11]);
+
+        return nodesArr[0];
     }
 
 }
